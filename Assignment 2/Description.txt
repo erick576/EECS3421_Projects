@@ -1,0 +1,137 @@
+Query #1
+
+concatenate
+
+-- Show all customers and the clubs they are members of in the form 'x is a member of y' where x is a customer (by name) and y is a club. One line per customer-club pair (called membership).
+
+-- Schema: membership
+
+-- Order by customers' name.
+
+Query #2
+
+awkward
+
+-- Remove all zeroes and vowels from book title and year. Show four columns: title, title without vowels (call it stripped1), year, year without 0s (call it stripped2).
+
+-- Schema: title, stripped1, year, stripped2
+
+-- Order by title, year
+
+Query #3
+
+percentage
+
+-- Determine the percentage of total weight of all books published in 1999 against the total weight of all books. Cast percentage to have a precision of five (the maximum total number of decimal digits to be displayed) and a scale of two (the number of decimal digits that are stored to the right of the decimal point).
+
+
+-- schema: percentage
+
+Query #4
+
+skew
+
+-- Compute the average weight of all books excluding the ones with maximum and minimum weight (that is, ignore the books with the extreme values for weight.
+
+
+-- schema: averageWeight
+
+Query #5
+
+less
+
+-- Find the books that were purchased in lower quantity than the books purchased immediately after them. In other words, if book x was purchased at time t1 and the next purchase was recorded at time t2 for book y, then book x qualifies if its quantity(qnty) is less than quantity of y.
+
+-- schema: title, year, qnty, whenp
+
+
+-- order by title, year, qnty, whenp
+
+Query #6
+
+ranking
+
+-- Rank the weights of books while allowing for ties. For example, if there are only 3 books with weights 10, 10 and 11 you should produce the following:
+
+rank weight
+
+_____________
+
+1 10
+
+1 10
+
+2 11
+
+-- 
+
+-- schema: rank, weight
+
+-- order by rank
+
+Query #7 
+
+bucket
+
+-- Put the customers into buckets of size 5 with respect to their cids.
+
+-- schema: bucket, cid, name
+
+
+-- order by bucket, cid
+
+Query #8
+
+total
+
+-- List the total weight of all books in each category and then in the last line give the total weight for all books. The output should -- look like this:
+
+Cat     weight
+
+---------------
+
+Travel  32423
+
+……
+
+……
+
+Total   2378627
+
+
+
+-- schema: cat, weight
+
+
+-- order by cat, weight
+
+Query #9
+
+member1
+
+
+
+-- Find the customers (by cid) who are members of Basic and Oprah clubs but not both.
+
+
+
+-- schema: cid
+
+
+-- order by cid
+
+Query #10
+
+member2
+
+
+
+-- Find the customers (by cid) who are members of both Basic and Oprah clubs but no other club.
+
+
+
+-- schema: cid
+
+
+-- order by cid
+
