@@ -1,0 +1,11 @@
+SELECT CONCAT(name, ' is a member of ', club) AS membership
+FROM (
+    SELECT * 
+    FROM (
+        SELECT *
+        FROM yrb_customer
+        NATURAL JOIN yrb_member
+    ) AS yrb_customer_member
+    NATURAL JOIN yrb_club
+) AS yrb_customer_member_club
+ORDER BY name;

@@ -1,0 +1,13 @@
+SELECT cid
+FROM (
+    SELECT cid
+    FROM yrb_member
+    WHERE cid IN (
+        SELECT cid FROM yrb_member WHERE club = 'Oprah'
+        INTERSECT
+        SELECT cid FROM yrb_member WHERE club = 'Basic'
+        )
+) AS sub
+GROUP BY cid
+HAVING COUNT(*) = 2
+ORDER BY cid;

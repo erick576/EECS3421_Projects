@@ -1,0 +1,3 @@
+SELECT FLOOR((ROW_NUMBER() OVER (ORDER BY cid DESC) - 1) / 5) + 1 AS bucket, cid, name
+FROM yrb_customer
+ORDER BY bucket, cid;

@@ -1,0 +1,5 @@
+SELECT y1.title, y1.year, y1.qnty, y1.whenp
+FROM yrb_purchase y1
+WHERE y1.whenp < (SELECT MIN(whenp) FROM yrb_purchase WHERE y1.whenp < whenp)
+AND y1.qnty < (SELECT MAX(qnty) FROM yrb_purchase WHERE whenp = (SELECT MIN(whenp) FROM yrb_purchase WHERE y1.whenp < whenp))
+ORDER BY title, year, qnty, whenp;

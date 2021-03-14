@@ -1,0 +1,3 @@
+SELECT title, TRANSLATE(title, 'AEIOUaeiou', '') as stripped1, year,  CAST(REPLACE(CAST(year AS VARCHAR(50)), '0', '') AS smallint) AS stripped2
+FROM yrb_book
+ORDER BY title, year;

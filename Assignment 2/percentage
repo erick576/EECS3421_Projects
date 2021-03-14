@@ -1,0 +1,1 @@
+SELECT CAST((CAST((SELECT SUM(weight) FROM yrb_book WHERE year = 1999) AS FLOAT) / CAST((SELECT SUM(weight) FROM yrb_book) AS FLOAT)) * 100 AS DECIMAL(5, 2)) AS percentage;

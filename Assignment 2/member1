@@ -1,0 +1,9 @@
+SELECT cid
+FROM yrb_member
+WHERE cid NOT IN (
+    SELECT cid FROM yrb_member WHERE club = 'Oprah'
+    INTERSECT
+    SELECT cid FROM yrb_member WHERE club = 'Basic'
+    )
+AND (club = 'Oprah' OR club = 'Basic')
+ORDER BY cid;
